@@ -1,3 +1,7 @@
+https://travis-ci.org/crazyhappygame/modern_cmake.svg?branch=master
+https://ci.appveyor.com/api/projects/status/c28chdikeqjxvggi?svg=true
+
+
 # Source code for all external dependecies and for all platforms
 # Use modern cmake (target_*)
 Example:
