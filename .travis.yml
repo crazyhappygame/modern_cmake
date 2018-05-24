@@ -1,0 +1,19 @@
+matrix:
+  include:
+    # linux
+    - os: linux
+      language: cpp
+      sudo: required
+    # mac
+    - os: osx
+      language: cpp
+      osx_image: xcode8.3
+      sudo: required
+
+script:
+- tools/travis-scripts/run-script.sh
+before_install:
+- tools/travis-scripts/before-install.sh
+
+cache:
+  bundler: true
