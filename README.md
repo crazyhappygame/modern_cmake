@@ -1,5 +1,7 @@
-1. Source code for all external dependecies for all platforms 
-2. Use moder cmake target_*If external projec support cmake use it 
+# Source code for all external dependecies and for all platforms
+# Use modern cmake (target_*)
+Example:
+```
 # create library
 file(GLOB_RECURSE SOURCES Box2D/*.cpp)
 add_library(Box2D ${SOURCES})
@@ -8,5 +10,5 @@ target_include_directories(Box2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # use library
 target_link_libraries(game2 Box2D)
-4. setup CI for all platforms
- 
+```
+# setup CI for all platforms
