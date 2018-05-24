@@ -1,5 +1,7 @@
-https://travis-ci.org/crazyhappygame/modern_cmake.svg?branch=master
-https://ci.appveyor.com/api/projects/status/c28chdikeqjxvggi?svg=true
+
+![Build status](https://travis-ci.org/crazyhappygame/modern_cmake.svg?branch=master)
+
+![Build status](https://ci.appveyor.com/api/projects/status/c28chdikeqjxvggi?svg=true)
 
 
 # Source code for all external dependecies and for all platforms
