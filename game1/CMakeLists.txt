@@ -1,4 +1,3 @@
-file(GLOB_RECURSE SOURCES *.cpp)
-add_executable(game1 ${SOURCES})
+add_executable(game1 main.cpp)
 
 target_link_libraries(game1 engine)
