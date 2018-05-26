@@ -4,6 +4,9 @@ $env:ANDROID_NDK_HOME=$env:APPVEYOR_BUILD_FOLDER + "\..\android-ndk-r16b"
 $env:NDK_ROOT=$env:APPVEYOR_BUILD_FOLDER + "\..\android-ndk-r16b"
 $env:ANDROID_NDK_ROOT=$env:APPVEYOR_BUILD_FOLDER + "\..\android-ndk-r16b"
 
+Write-Host "PATH"
+Write-Host "$env:PATH"
+
 If ($env:build_type -eq "android_armeabi") {
     & mkdir $env:APPVEYOR_BUILD_FOLDER\build
     # if ($lastexitcode -ne 0) {throw}
