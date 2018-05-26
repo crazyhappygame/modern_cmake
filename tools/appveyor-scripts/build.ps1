@@ -8,7 +8,6 @@ If ($env:build_type -eq "android_armeabi") {
     & mkdir $env:APPVEYOR_BUILD_FOLDER\build
     # if ($lastexitcode -ne 0) {throw}
     Push-Location $env:APPVEYOR_BUILD_FOLDER\build
-    & cmake .. -DCMAKE_ANDROID_STANDALONE_TOOLCHAIN=$env:APPVEYOR_BUILD_FOLDER\tools\android_arm_toolchain.cmake
     & cmake .. -DCMAKE_TOOLCHAIN_FILE=$env:APPVEYOR_BUILD_FOLDER\tools\android_arm_toolchain.cmake -G Ninja
     if ($lastexitcode -ne 0) {throw}
     & cmake --build .
