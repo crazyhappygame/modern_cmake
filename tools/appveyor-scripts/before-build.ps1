@@ -11,6 +11,7 @@ function Update-SubModule
 
 if ($env:build_type -like "android*") {
     & choco install ninja
+    & ninja --version
     & $python -u .\tools\appveyor-scripts\setup_android.py --ndk_only
     if ($lastexitcode -ne 0) {throw}
 }
