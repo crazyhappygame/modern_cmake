@@ -6,6 +6,7 @@ $env:ANDROID_NDK_ROOT=$env:APPVEYOR_BUILD_FOLDER + "\..\android-ndk-r16b"
 
 Write-Host "PATH"
 Write-Host "$env:PATH"
+& ninja --version
 
 If ($env:build_type -eq "android_armeabi") {
     & mkdir $env:APPVEYOR_BUILD_FOLDER\build
