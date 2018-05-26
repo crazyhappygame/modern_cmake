@@ -33,6 +33,7 @@ install:
   - ninja --version
 
 before_build:
+  - cd C:\projects\modern-cmake
   - ps: ./tools/appveyor-scripts/before-build.ps1
 
 build_script:
