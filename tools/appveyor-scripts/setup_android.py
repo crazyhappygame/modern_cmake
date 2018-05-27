@@ -99,6 +99,7 @@ def export_environment(ndk_only):
             myfile.write("export ANDROID_SDK_ROOT=" + ANDROID_SDK + "\n")
         myfile.write("export ANDROID_NDK_HOME=" + ANDROID_NDK + "\n")
         myfile.write("export NDK_ROOT=" + ANDROID_NDK + "\n")
+        myfile.write("export ANDROID_NDK_ROOT=" + ANDROID_NDK + "\n")
 
     with open(os.path.join(ROOT_DIR, "environment.ps1"), "a") as myfile:
         if not ndk_only:
@@ -106,6 +107,8 @@ def export_environment(ndk_only):
             myfile.write("$env:ANDROID_SDK_ROOT=\"" + ANDROID_SDK + "\"\n")
         myfile.write("$env:ANDROID_NDK_HOME=\"" + ANDROID_NDK + "\"\n")
         myfile.write("$env:NDK_ROOT=\"" + ANDROID_NDK + "\"\n")
+        myfile.write("$env:ANDROID_NDK_ROOT=\"" + ANDROID_NDK + "\"\n")
+        
 
 
 def main(ndk_only):

@@ -6,7 +6,6 @@ set -x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 COCOS2DX_ROOT="$DIR"/../..
-source ../environment.sh
 
 function build_linux()
 {
@@ -20,6 +19,8 @@ function build_linux()
 
 function build_android_armeabi()
 {
+    source ../environment.sh
+
     echo "Building build_android_armeabi ..."
     echo $TRAVIS_BUILD_DIR
 
