@@ -6,11 +6,10 @@ set -x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 COCOS2DX_ROOT="$DIR"/../..
-CPU_CORES=4
 
 function build_linux()
 {
-    echo "Building tests ..."
+    echo "Building  ..."
     echo $TRAVIS_BUILD_DIR
     mkdir -p $COCOS2DX_ROOT/build
     cd $COCOS2DX_ROOT/build
@@ -18,5 +17,21 @@ function build_linux()
     cmake --build .
 }
 
+function build_android_armeabi()
+{
+    echo "Building build_android_armeabi ..."
+    echo $TRAVIS_BUILD_DIR
+
+    mkdir -p $COCOS2DX_ROOT/build
+    cd $COCOS2DX_ROOT/build
+    & cmake .. -DCMAKE_TOOLCHAIN_FILE=$COCOS2DX_ROOT/tools/android_arm_toolchain.cmake -G Ninja
+    cmake --build .
+}
+
+
+if [ "$BUILD_TARGET" == "android_armeabi" ]; then
+    build_android_armeabi
+    exit 0
+fi
 
 build_linux

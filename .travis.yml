@@ -4,11 +4,18 @@ matrix:
     - os: linux
       language: cpp
       sudo: required
+      env: BUILD_TARGET=android_armeabi
+    # linux
+    - os: linux
+      language: cpp
+      sudo: required
+      env: BUILD_TARGET=linux
     # mac
     - os: osx
       language: cpp
       osx_image: xcode8.3
       sudo: required
+      env: BUILD_TARGET=osx
 
 script:
 - tools/travis-scripts/run-script.sh
