@@ -30,9 +30,24 @@ function build_android_armeabi()
     cmake --build .
 }
 
+function android_game12()
+{
+    source ../environment.sh
+
+    cd $COCOS2DX_ROOT/game1/android
+    ./gradlew assembleRelease
+
+    cd $COCOS2DX_ROOT/game2/android
+    ./gradlew assembleRelease
+}
 
 if [ "$BUILD_TARGET" == "android_armeabi" ]; then
     build_android_armeabi
+    exit 0
+fi
+
+if [ "$BUILD_TARGET" == "android_game12" ]; then
+    android_game12
     exit 0
 fi
 

@@ -1,16 +1,17 @@
 matrix:
   include:
-    # linux
     - os: linux
       language: cpp
       sudo: required
-      env: BUILD_TARGET=android_armeabi
-    # linux
+      env: BUILD_TARGET=android_game12
+    - os: linux
+      language: cpp
+      sudo: required
+      env: BUILD_TARGET=android_lib
     - os: linux
       language: cpp
       sudo: required
       env: BUILD_TARGET=linux
-    # mac
     - os: osx
       language: cpp
       osx_image: xcode8.3
