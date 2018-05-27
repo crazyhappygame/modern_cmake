@@ -46,5 +46,7 @@ Box2D/Dynamics/Joints/b2WeldJoint.cpp
 Box2D/Dynamics/Joints/b2WheelJoint.cpp
 Box2D/Rope/b2Rope.cpp
 )
-target_compile_features(Box2D PUBLIC cxx_std_11)
+
+target_compile_features(Box2D PUBLIC cxx_nullptr)
+
 target_include_directories(Box2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

@@ -1,5 +1,5 @@
 # main cmake
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.6)
 
 #target_compile_features(engine PUBLIC cxx_std_11)
 # global settings
