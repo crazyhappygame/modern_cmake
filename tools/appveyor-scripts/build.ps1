@@ -18,12 +18,10 @@ If ($env:build_type -eq "android_lib") {
     Pop-Location
 } elseif ($env:build_type -eq "android_game12") {
     Push-Location $env:APPVEYOR_BUILD_FOLDER\game1\android
-    if ($lastexitcode -ne 0) {throw}
     & ./gradlew assembleRelease
     if ($lastexitcode -ne 0) {throw}
 
     Push-Location $env:APPVEYOR_BUILD_FOLDER\game2\android
-    if ($lastexitcode -ne 0) {throw}
     & ./gradlew assembleRelease
     if ($lastexitcode -ne 0) {throw}
 
