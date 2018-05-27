@@ -6,7 +6,7 @@ set -x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 COCOS2DX_ROOT="$DIR"/../..
-export ANDROID_NDK_ROOT=$COCOS2DX_ROOT/../android-ndk-r16b
+source ../environment.sh
 
 function build_linux()
 {
