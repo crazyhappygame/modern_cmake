@@ -17,7 +17,7 @@ If ($env:build_type -eq "android_lib") {
     & cmake --build .
     if ($lastexitcode -ne 0) {throw}
     Pop-Location
-} else if ($env:build_type -eq "android_game12") {
+} elseif ($env:build_type -eq "android_game12") {
     Push-Location $env:APPVEYOR_BUILD_FOLDER\game1\android
     if ($lastexitcode -ne 0) {throw}
     & ./gradlew assembleRelease
