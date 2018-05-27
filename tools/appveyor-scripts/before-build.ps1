@@ -9,10 +9,14 @@ function Update-SubModule
     Pop-Location
 }
 
-if ($env:build_type -like "android*") {
+if ($env:build_type -like "android_lib") {
     & choco install ninja
     & ninja --version
     & $python -u .\tools\appveyor-scripts\setup_android.py --ndk_only
     if ($lastexitcode -ne 0) {throw}
 }
 
+if ($env:build_type -like "android_game12") {
+    & $python -u .\tools\appveyor-scripts\setup_android.py
+    if ($lastexitcode -ne 0) {throw}
+}

@@ -6,7 +6,8 @@ environment:
   PYTHON_VERSION: "2.7.13"
   PYTHON_ARCH: "32"
   matrix:
-    - build_type: android_armeabi
+    - build_type: android_game12
+    - build_type: android_lib
     - build_type: windows32
 
 
