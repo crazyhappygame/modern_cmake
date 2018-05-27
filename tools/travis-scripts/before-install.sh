@@ -9,8 +9,8 @@ COCOS2DX_ROOT="$DIR"/../..
 
 
 if [ "$BUILD_TARGET" == "android_armeabi" ]; then
-    apt-get update
-    apt-get install ninja
+    sudo apt-get update
+    sudo apt-get install ninja
     python $COCOS2DX_ROOT/tools/appveyor-scripts/setup_android.py --ndk_only
 fi
 
