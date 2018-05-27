@@ -24,7 +24,7 @@ function build_android_armeabi()
 
     mkdir -p $COCOS2DX_ROOT/build
     cd $COCOS2DX_ROOT/build
-    & cmake .. -DCMAKE_TOOLCHAIN_FILE=$COCOS2DX_ROOT/tools/android_arm_toolchain.cmake -G Ninja
+    cmake .. -DCMAKE_TOOLCHAIN_FILE=$COCOS2DX_ROOT/tools/android_arm_toolchain.cmake -G Ninja
     cmake --build .
 }
 
