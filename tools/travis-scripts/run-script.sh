@@ -41,6 +41,19 @@ function android_game12()
     ./gradlew assembleRelease
 }
 
+function build_ios()
+{
+    mkdir -p $COCOS2DX_ROOT/build_ios
+    cd $COCOS2DX_ROOT/build_ios
+    cmake .. -GXcode -DCMAKE_TOOLCHAIN_FILE=../cmake/ios.toolchain.cmake
+    cmake --build .
+}
+
+if [ "$BUILD_TARGET" == "ios_build" ]; then
+    build_ios
+    exit 0
+fi
+
 if [ "$BUILD_TARGET" == "android_armeabi" ]; then
     build_android_armeabi
     exit 0
