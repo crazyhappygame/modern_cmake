@@ -1,3 +1,6 @@
+cmake_minimum_required(VERSION 3.6)
+project(Box2D)
+
 add_library(Box2D
 Box2D/Collision/b2BroadPhase.cpp
 Box2D/Collision/b2CollideCircle.cpp

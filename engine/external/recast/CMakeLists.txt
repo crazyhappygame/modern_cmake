@@ -1,3 +1,6 @@
+cmake_minimum_required(VERSION 3.6)
+project(recast)
+
 set(RECAST_SRC
 DebugUtils/DebugDraw.cpp
 DebugUtils/DetourDebugDraw.cpp
