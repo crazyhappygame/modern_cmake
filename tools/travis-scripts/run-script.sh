@@ -45,7 +45,7 @@ function build_ios()
 {
     mkdir -p $COCOS2DX_ROOT/build_ios
     cd $COCOS2DX_ROOT/build_ios
-    cmake .. -GXcode -DCMAKE_TOOLCHAIN_FILE=../cmake/ios.toolchain.cmake
+    cmake .. -GXcode -DCMAKE_TOOLCHAIN_FILE=../tools/ios.toolchain.cmake
     cmake --build .
 }
 
