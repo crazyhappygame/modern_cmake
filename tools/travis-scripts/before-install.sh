@@ -8,7 +8,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 COCOS2DX_ROOT="$DIR"/../..
 
 
-if [ "$BUILD_TARGET" == "android_lib_armeabi_v7a" || "$BUILD_TARGET" == "android_lib_x86" || "$BUILD_TARGET" == "android_lib_arm64_v8a"]; then
+if [ "$BUILD_TARGET" == "android_lib_armeabi_v7a" ] || [ "$BUILD_TARGET" == "android_lib_x86" ] || [ "$BUILD_TARGET" == "android_lib_arm64_v8a"]; then
     sudo apt-get update
     sudo apt-get install ninja-build
     ninja --version
