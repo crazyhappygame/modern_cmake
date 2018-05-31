@@ -12,7 +12,15 @@ matrix:
     - os: linux
       language: cpp
       sudo: required
-      env: BUILD_TARGET=android_lib
+      env: BUILD_TARGET=android_lib_armeabi_v7a
+    - os: linux
+      language: cpp
+      sudo: required
+      env: BUILD_TARGET=android_lib_x86
+    - os: linux
+      language: cpp
+      sudo: required
+      env: BUILD_TARGET=android_lib_arm64_v8a
     - os: linux
       language: cpp
       sudo: required

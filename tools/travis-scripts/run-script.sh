@@ -17,7 +17,7 @@ function build_linux()
     cmake --build .
 }
 
-function build_android_armeabi()
+function build_android_armeabi_v7a()
 {
     source ../environment.sh
 
@@ -26,7 +26,33 @@ function build_android_armeabi()
 
     mkdir -p $COCOS2DX_ROOT/build
     cd $COCOS2DX_ROOT/build
-    cmake .. -DCMAKE_TOOLCHAIN_FILE=$COCOS2DX_ROOT/tools/android_arm_toolchain.cmake -G Ninja
+    cmake .. -DCMAKE_TOOLCHAIN_FILE=$COCOS2DX_ROOT/tools/android_armeabi_v7a_toolchain.cmake -G Ninja
+    cmake --build .
+}
+
+function build_android_x86()
+{
+    source ../environment.sh
+
+    echo "Building build_android_armeabi ..."
+    echo $TRAVIS_BUILD_DIR
+
+    mkdir -p $COCOS2DX_ROOT/build
+    cd $COCOS2DX_ROOT/build
+    cmake .. -DCMAKE_TOOLCHAIN_FILE=$COCOS2DX_ROOT/tools/android_x86_toolchain.cmake -G Ninja
+    cmake --build .
+}
+
+function build_android_arm64_v8a()
+{
+    source ../environment.sh
+
+    echo "Building build_android_armeabi ..."
+    echo $TRAVIS_BUILD_DIR
+
+    mkdir -p $COCOS2DX_ROOT/build
+    cd $COCOS2DX_ROOT/build
+    cmake .. -DCMAKE_TOOLCHAIN_FILE=$COCOS2DX_ROOT/tools/android_arm64_v8a_toolchain.cmake -G Ninja
     cmake --build .
 }
 
@@ -55,8 +81,18 @@ if [ "$BUILD_TARGET" == "ios_build" ]; then
     exit 0
 fi
 
-if [ "$BUILD_TARGET" == "android_armeabi" ]; then
-    build_android_armeabi
+if [ "$BUILD_TARGET" == "android_lib_armeabi_v7a" ]; then
+    build_android_armeabi_v7a
+    exit 0
+fi
+
+if [ "$BUILD_TARGET" == "android_lib_x86" ]; then
+    build_android_x86
+    exit 0
+fi
+
+if [ "$BUILD_TARGET" == "android_lib_arm64_v8a" ]; then
+    build_android_arm64_v8a
     exit 0
 fi
 
