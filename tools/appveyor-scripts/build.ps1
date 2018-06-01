@@ -15,7 +15,7 @@ If ($env:build_type -eq "android_lib") {
     & mkdir $env:APPVEYOR_BUILD_FOLDER\build
     # if ($lastexitcode -ne 0) {throw}
     Push-Location $env:APPVEYOR_BUILD_FOLDER\build
-    & cmake .. -DCMAKE_TOOLCHAIN_FILE="$env:APPVEYOR_BUILD_FOLDER\tools\android_arm_toolchain.cmake" -G Ninja
+    & cmake .. -DCMAKE_TOOLCHAIN_FILE="$env:APPVEYOR_BUILD_FOLDER\tools\android_armeabi_v7a_toolchain.cmake" -G Ninja
     if ($lastexitcode -ne 0) {throw}
     & cmake --build .
     if ($lastexitcode -ne 0) {throw}
