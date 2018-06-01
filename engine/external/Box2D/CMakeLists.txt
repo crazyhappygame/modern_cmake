@@ -50,6 +50,7 @@ Box2D/Dynamics/Joints/b2WheelJoint.cpp
 Box2D/Rope/b2Rope.cpp
 )
 
+# TODO: check why target_compile_features does work for IOS
 if (NOT IOS)
     target_compile_features(Box2D PUBLIC cxx_nullptr)
 endif()
