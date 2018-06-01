@@ -43,6 +43,19 @@ function build_android_x86()
     cmake --build .
 }
 
+function build_android_x86_64()
+{
+    source ../environment.sh
+
+    echo "Building build_android_armeabi ..."
+    echo $TRAVIS_BUILD_DIR
+
+    mkdir -p $COCOS2DX_ROOT/build
+    cd $COCOS2DX_ROOT/build
+    cmake .. -DCMAKE_TOOLCHAIN_FILE=$COCOS2DX_ROOT/tools/android_x86_64_toolchain.cmake -G Ninja
+    cmake --build .
+}
+
 function build_android_arm64_v8a()
 {
     source ../environment.sh
@@ -88,6 +101,11 @@ fi
 
 if [ "$BUILD_TARGET" == "android_lib_x86" ]; then
     build_android_x86
+    exit 0
+fi
+
+if [ "$BUILD_TARGET" == "android_lib_x86_64" ]; then
+    build_android_x86_64
     exit 0
 fi
 
