@@ -46,6 +46,9 @@ If ($env:build_type -eq "android_lib") {
     & cmake --build .
     if ($lastexitcode -ne 0) {throw}
 
+    & ctest --verbose
+    if ($lastexitcode -ne 0) {throw}
+
     Pop-Location
     
 }

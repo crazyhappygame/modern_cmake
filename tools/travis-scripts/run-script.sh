@@ -7,7 +7,7 @@ set -x
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 COCOS2DX_ROOT="$DIR"/../..
 
-function build_linux()
+function build_linux_mac()
 {
     echo "Building  ..."
     echo $TRAVIS_BUILD_DIR
@@ -15,6 +15,7 @@ function build_linux()
     cd $COCOS2DX_ROOT/build
     cmake ..
     cmake --build .
+    ctest --verbose
 }
 
 function build_android_armeabi_v7a()
@@ -118,4 +119,4 @@ if [ "$BUILD_TARGET" == "android_game12" ]; then
     exit 0
 fi
 
-build_linux
+build_linux_mac

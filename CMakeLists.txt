@@ -11,6 +11,8 @@ endif()
 set(CXX_STANDARD_REQUIRED ON)
 set(CXX_EXTENSIONS OFF)
 
+enable_testing()
+
 add_subdirectory(engine)
 add_subdirectory(game1)
 add_subdirectory(game2)
