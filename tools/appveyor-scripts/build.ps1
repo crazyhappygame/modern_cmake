@@ -25,9 +25,17 @@ If ($env:build_type -eq "android_lib") {
     & ./gradlew assembleRelease
     if ($lastexitcode -ne 0) {throw}
 
+    & 7z a release1.7z $env:APPVEYOR_BUILD_FOLDER\game1\android\app\build\outputs\
+    if ($lastexitcode -ne 0) {throw}
+    Push-AppveyorArtifact release1.7z
+
     Push-Location $env:APPVEYOR_BUILD_FOLDER\game2\android
     & ./gradlew assembleRelease
     if ($lastexitcode -ne 0) {throw}
+
+    & 7z a release2.7z $env:APPVEYOR_BUILD_FOLDER\game2\android\app\build\outputs\
+    if ($lastexitcode -ne 0) {throw}
+    Push-AppveyorArtifact release2.7z
 
 } Else {
     & mkdir $env:APPVEYOR_BUILD_FOLDER\build
@@ -37,6 +45,7 @@ If ($env:build_type -eq "android_lib") {
     if ($lastexitcode -ne 0) {throw}
     & cmake --build .
     if ($lastexitcode -ne 0) {throw}
+
     Pop-Location
     
 }
