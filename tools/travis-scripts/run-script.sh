@@ -82,9 +82,6 @@ function android_game12()
 
 function build_ios()
 {
-    cmake --version
-    brew upgrade cmake
-    cmake --version
     mkdir -p $COCOS2DX_ROOT/build_ios
     cd $COCOS2DX_ROOT/build_ios
     cmake .. -DCMAKE_TOOLCHAIN_FILE=../tools/ios.toolchain.cmake
