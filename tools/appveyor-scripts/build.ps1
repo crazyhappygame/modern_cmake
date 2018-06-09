@@ -22,7 +22,7 @@ If ($env:build_type -eq "android_lib") {
     Pop-Location
 } elseif ($env:build_type -eq "android_game12") {
     Push-Location $env:APPVEYOR_BUILD_FOLDER\game1\android
-    & ./gradlew assembleRelease
+    & ./gradlew assembleDebug
     if ($lastexitcode -ne 0) {throw}
 
     & 7z a release1.7z $env:APPVEYOR_BUILD_FOLDER\game1\android\app\build\outputs\
@@ -30,7 +30,7 @@ If ($env:build_type -eq "android_lib") {
     Push-AppveyorArtifact release1.7z
 
     Push-Location $env:APPVEYOR_BUILD_FOLDER\game2\android
-    & ./gradlew assembleRelease
+    & ./gradlew assembleDebug
     if ($lastexitcode -ne 0) {throw}
 
     & 7z a release2.7z $env:APPVEYOR_BUILD_FOLDER\game2\android\app\build\outputs\
