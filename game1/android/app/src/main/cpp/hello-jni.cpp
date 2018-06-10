@@ -17,12 +17,14 @@
 #include <string.h>
 #include <jni.h>
 
+#include "engine/engine.h"
 /* This is a trivial JNI example where we use a native method
  * to return a new VM String. See the corresponding Java source
  * file located at:
  *
  *   hello-jni/app/src/main/java/com/example/hellojni/HelloJni.java
  */
+extern "C" {
 JNIEXPORT jstring JNICALL
 Java_com_example_hellojni_HelloJni_stringFromJNI( JNIEnv* env,
                                                   jobject thiz )
@@ -58,6 +60,7 @@ Java_com_example_hellojni_HelloJni_stringFromJNI( JNIEnv* env,
 #else
 #define ABI "unknown"
 #endif
-
-    return (*env)->NewStringUTF(env, "Hello from JNI !  Compiled with ABI " ABI ".");
+    std::string str = std::string(ABI) + "\ngame1\n" + engine::getInfo();
+    return (*env).NewStringUTF(str.c_str());
+}
 }
